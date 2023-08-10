@@ -6,6 +6,7 @@
 #include "all.hpp"
 #include <vector>
 using namespace std;
+
 void studentMenu(Identity* &student1)
 {
 	while (true)
@@ -116,6 +117,8 @@ void LoginIn(string fileName, int type) //操作的txt， 选择的身份序号
 	{
 		cout << "文件不存在！" << endl;
 		ifs.close();
+		system("pause");
+		system("cls");
 		return;
 	}
 	string name;
@@ -213,6 +216,9 @@ void showBigMenu()
 }
 int main()
 {
+	ofstream ofs(ADMIN_FILE, ios::out | ios::trunc);
+	ofs << "admin" << "  " << "123";
+	ofs.close();
 	int choose;
 	while (true)
 	{
